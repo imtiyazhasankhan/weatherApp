@@ -145,7 +145,7 @@ function App() {
 
         <div className='gap bgGlassy' id='infoCode'>
           <span className='iconAndTextSpan'><div className="icon"><div className="githubIcon iconItSelf"></div></div>
-            <p><a target={"_blank"} href="https://github.com/" className='hrefLink'>Click here to get the code</a></p>
+            <p><a target={"_blank"} href="https://github.com/imtiyazhasankhan/weatherApp" className='hrefLink'>Click here to get the code</a></p>
           </span>
         </div>
 
