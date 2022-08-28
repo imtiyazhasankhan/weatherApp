@@ -1,34 +1,198 @@
-.App {
-  text-align: center;
+/* Design inspired with : https://portfolio.indiefolio.com/project/6000091d6a00f/weather-app */
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  transition: all 0.7s;
+}
+.invisibleTrue{
+  color: #00000000;
+  cursor: default;
+}
+.invisibleTrue::selection{
+  background-color: #00000000;
+  color: #ffffff00;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  position: relative;
+  background: linear-gradient(113deg, #3D42C2 0.63%, #48A7FF 65.45%, #7E63EB 97.97%) center center no-repeat;
+  background-size: cover;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  margin: auto;
+  padding: 4px;
+  width: 600px;
+  height: 300px;
+  color: #fff;
+}
+
+
+/* ____________________________________________________________ */
+/* classes for multiple divs */
+.gap {
+  margin: 4px;
+  padding: 10px;
+}
+.mt {
+  margin-top: 8px;
+}
+.mb {
+  margin-bottom: 8px;
+}
+.mr {
+  margin-right: 10px;
+}
+.largeText {
+  font-size: 2rem;
+}
+.iconAndTextSpan {
+  display: flex;
+}
+.iconAndTextSpan p {
+  line-height: 14px;
+}
+.icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  background-color: #ffffff15;
+  border-radius: 6px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.iconItSelf {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+}
+.bgGlassy {
+  background-color: #ffffff1c;
+  /* backdrop-filter: saturate(177%) blur(17px); */
+  box-shadow: 0 0 1rem 0 #0d18522c; 
+}
+/* End of classes for muliple divs */
+/* _____________________________________________________________ */
+
+
+
+.topGridBox {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+.topLeftDiv {
+  /*this is  "location" and text like "Sunny", "Cloudy", "Mist" and more info container */
+  border-top-left-radius: 16px;
+}
+.weatherIcon_and_text_container {
+  display: flex;
+  justify-content: space-between;
+}
+.conditionText {
+  max-width: calc(100% - 50px);
+}
+.weatherIcon {
+  margin-top: 8px;
+  width: 46px;
+  height: 46px;
+}
+.topRightGridBox {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.temp {
+  border-top-right-radius: 16px;
+  margin-bottom: 4px;
+}
+.tempIcon {
+  width: 40px;
+  height: 40px;
+  margin-top: 6px;
+  background: url("./icons/Taapmaan.svg") center center no-repeat;
+  background-size: contain;
+}
+
+
+/* _______________Icon Classes___________________________________ */
+.locationIcon {
+  background: url("./icons/locationIcon.svg") center center no-repeat;
+  background-size: contain;
+}
+.humidityIcon {
+  background: url("./icons/humidityIcon.svg") center center no-repeat;
+  background-size: contain;
+}
+.windIcon {
+  background: url("./icons/AirIcon.svg") center center no-repeat;
+  background-size: contain;
+}
+.feelsLikeIcon {
+  background: url("./icons/weatherIcon.svg") center center no-repeat;
+  background-size: contain;
+}
+.githubIcon {
+  background: url("./icons/github.svg") center center no-repeat;
+  background-size: contain;
+  transform: scale(1.2);
+}
+/* _______________End of Icon Classes___________________________________ */
+
+.bottomDiv {
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.loadingIcon {
+  width: 20px;
+  height: 20px;
+  background: url("./icons/spinner-of-dots.png") center center no-repeat;
+  background-size: contain;
+  animation: spin 1.5s infinite;
+  filter: invert(1);
+  margin-right: 10px;
+}
+.searchBoxContainer {
+  display: flex;
+}
+.searchBoxContainer input {
+  outline: none;
+  border: none;
+  background-color: #ffffff15;
+  border-radius: 4px;
   color: white;
+  padding: 0px 8px;
+}
+::placeholder {
+  color: #ffffffa6;
 }
 
-.App-link {
-  color: #61dafb;
+.searchIcon {
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  background: url("./icons/searchIcon.svg") center center no-repeat;
+  background-size: contain;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
+.greeting {
+  margin-left: 3px;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -36,3 +200,110 @@
     transform: rotate(360deg);
   }
 }
+
+.uselessBottomBar {
+  display: none;
+  width: 100px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: #ffffffa2;
+  margin: auto;
+  margin-top: 10px;
+}
+.userSearched_City_Container {
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.weatherIconUserSearch {
+  margin-right: 10px;
+}
+.tempUserSearch {
+  height: fit-content;
+  margin-top: 16px;
+}
+
+#infoCode{
+  display: none;
+  border-radius: 16px;
+}
+.hrefLink{
+  color: white;
+  text-decoration: none;
+}
+
+/* _________Media query_______________________________________________ */
+@media only screen and (max-width: 680px) {
+  .container {
+    width: 90vw;
+  }
+  .uselessBottomBar {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .bottomDiv {
+    display: block;
+  }
+  .searchBoxContainer {
+    margin-top: 10px;
+    width: 100%;
+  }
+  .searchBoxContainer input {
+    padding: 4px 10px;
+    border-left: 2px solid #fff;
+    width: calc(100% - 30px);
+  }
+  .searchIcon {
+    margin-top: 2px;
+  }
+  .weatherIcon {
+    margin-top: 0px;
+  }
+  .largeText {
+    font-size: 1.7rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  .tempIcon {
+    width: 33px;
+    height: 33px;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .largeText {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+  .container {
+    width: 96vw;
+  }
+  .tempIcon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  .topGridBox {
+    grid-template-columns: 1fr;
+  }
+  .temp {
+    border-top-right-radius: 0px;
+  }
+  .topLeftDiv {
+    border-top-right-radius: 16px;
+  }
+  .container {
+    bottom: 230px;
+  }
+}
+
+/* _________End of Media query_______________________________________________ */

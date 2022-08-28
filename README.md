@@ -1,3 +1,6 @@
+### initialization : Sunday, August 14, 2022 3:16:50 PM IST
+### v1.0 : Friday, August 16, 2022 ( completed (first version) )
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -7,6 +10,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm start`
+
+## (node version : 18.7.0)
+## (npm version : 8.17.0)
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
